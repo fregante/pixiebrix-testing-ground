@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<title>Testing ground</title>
+<nav>
+	<a href="#Alpha">Alpha</a>
+	<a href="#Beta">Beta</a>
+	<a href="#Gamma">Gamma</a>
+	<a href="#Delta">Delta</a>
+	<a href="#Epsylon">Epsylon</a>
+</nav>
+<main id="main"></main>
+<script>
+	const title = new URLSearchParams(location.search).get('title');
+	if (title) {
+		document.title = title;
+	}
+
+	for (const iframe of new URLSearchParams(location.search).getAll('iframe')) {
+		const element = document.createElement('iframe');
+		element.src = iframe
+		main.append(element, document.createElement('br'));
+	}
+</script>
