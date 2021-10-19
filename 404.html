@@ -17,7 +17,7 @@ iframe {display: block; margin: 20px 0}
 	// Use /pixiebrix-testing-ground/my-description/My-page-title
 	// The description is used to target it with a pattern
 	// The title appears on the page
-	document.title = location.pathname.replace('/pixiebrix-testing-ground', '').split('/').pop().replace('-', ' ');
+	document.title = location.pathname.replace('/pixiebrix-testing-ground', '').split('/').pop().replaceAll('-', ' ');
 
 	for (const iframe of new URLSearchParams(location.search).getAll('iframe')) {
 		const element = document.createElement('iframe');
