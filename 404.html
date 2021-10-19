@@ -14,7 +14,7 @@ iframe {display: block; margin: 20px 0}
 </nav>
 <main id="main"></main>
 <script>
-	[document.title] = decodeURI(location.pathname.split('/')[2]);
+	document.title = decodeURI(location.pathname.split('/')[2]);
 
 	for (const iframe of new URLSearchParams(location.search).getAll('iframe')) {
 		const element = document.createElement('iframe');
