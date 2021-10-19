@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <meta charset="UTF-8" />
 <title>Testing ground</title>
-<style>head, title {display: block; font-size: 35px}</style>
+<style>
+head, title {display: block; font-size: 35px}
+iframe {display: block; margin: 20px 0}
+</style>
 <nav>
 	<a href="#Alpha">Alpha</a>
 	<a href="#Beta">Beta</a>
@@ -11,11 +14,11 @@
 </nav>
 <main id="main"></main>
 <script>
-	[document.title] = location.pathname.split('/')[2].split('.');
+	[document.title] = decodeURI(location.pathname.split('/')[2]);
 
 	for (const iframe of new URLSearchParams(location.search).getAll('iframe')) {
 		const element = document.createElement('iframe');
 		element.src = iframe
-		main.append(element, document.createElement('br'));
+		main.append(element);
 	}
 </script>
