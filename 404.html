@@ -14,7 +14,10 @@ iframe {display: block; margin: 20px 0}
 </nav>
 <main id="main"></main>
 <script>
-	document.title = decodeURI(location.pathname.replace('/pixiebrix-testing-ground/', '').split('/').pop());
+	// Use /pixiebrix-testing-ground/my-description/My-page-title
+	// The description is used to target it with a pattern
+	// The title appears on the page
+	document.title = location.pathname.replace('/pixiebrix-testing-ground', '').split('/').pop().replace('-', ' ');
 
 	for (const iframe of new URLSearchParams(location.search).getAll('iframe')) {
 		const element = document.createElement('iframe');
