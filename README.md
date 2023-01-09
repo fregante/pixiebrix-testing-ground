@@ -1,3 +1,6 @@
+Deprecated, moved to https://github.com/fregante/ephiframe
+
+
 # pixiebrix-testing-ground
 
 Build your own pages via URL. Examples:
